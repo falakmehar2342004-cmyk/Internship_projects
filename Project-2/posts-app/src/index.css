@@ -1,0 +1,134 @@
+/* ===== Global reset ===== */
+* { box-sizing: border-box; } /* padding and border stay inside the element width */
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+
+/* ===== App wrapper (light theme is the default) ===== */
+.app {
+  min-height: 100vh;
+  background: #f6f7fb;
+  color: #1d2230;
+  transition: background 0.2s, color 0.2s; /* smooth theme change */
+}
+
+/* ===== Page container ===== */
+.container { max-width: 1000px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.8rem 1.25rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e5ee;
+  position: sticky; /* stays on top while scrolling */
+  top: 0;
+}
+.brand { font-weight: 700; font-size: 1.2rem; text-decoration: none; color: #1d2230; }
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.nav-links a {
+  color: #1d2230;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+/* NavLink adds the "active" class to the current page link */
+.nav-links a.active { color: #4f46e5; border-color: #4f46e5; }
+
+/* ===== Buttons ===== */
+.btn {
+  background: #4f46e5;
+  color: #ffffff;
+  border: 0;
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+}
+.btn.small { padding: 0.35rem 0.7rem; font-size: 0.9rem; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ===== Home page hero ===== */
+.hero { text-align: center; padding: 3rem 1rem; }
+.hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); } /* size adjusts to screen width */
+
+/* ===== Inputs (search box and form fields) ===== */
+.search, .form input, .form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  font: inherit;
+  border: 1px solid #e2e5ee;
+  background: #ffffff;
+  color: #1d2230;
+}
+.search { margin: 0.5rem 0 1.25rem; }
+
+/* ===== Posts grid: columns adjust automatically to screen size ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* ===== Post card ===== */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e5ee;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.card h3 { margin: 0; text-transform: capitalize; font-size: 1.05rem; }
+
+/* ===== Forms ===== */
+.form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; }
+.form label { display: flex; flex-direction: column; gap: 0.35rem; font-weight: 600; }
+
+/* ===== Messages ===== */
+.error { color: #d92d20; font-size: 0.9rem; font-weight: 400; }
+.status { padding: 0.5rem 0; }
+
+/* ===== Post details page ===== */
+.details {
+  background: #ffffff;
+  border: 1px solid #e2e5ee;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.details h2 { text-transform: capitalize; }
+
+/* ===== Error boundary fallback screen ===== */
+.fallback { text-align: center; padding: 4rem 1rem; }
+
+/* ===== Dark theme (applied when data-theme="dark" is set) ===== */
+.app[data-theme="dark"] { background: #12141c; color: #e8eaf2; }
+.app[data-theme="dark"] .navbar { background: #1c1f2b; border-bottom-color: #2c3040; }
+.app[data-theme="dark"] .brand,
+.app[data-theme="dark"] .nav-links a { color: #e8eaf2; }
+.app[data-theme="dark"] .nav-links a.active { color: #818cf8; border-color: #818cf8; }
+.app[data-theme="dark"] .btn { background: #818cf8; }
+.app[data-theme="dark"] .search,
+.app[data-theme="dark"] .form input,
+.app[data-theme="dark"] .form textarea {
+  background: #1c1f2b;
+  color: #e8eaf2;
+  border-color: #2c3040;
+}
+.app[data-theme="dark"] .card,
+.app[data-theme="dark"] .details { background: #1c1f2b; border-color: #2c3040; }
+.app[data-theme="dark"] .error { color: #f97066; }
+
+/* ===== Responsive: small screens (phones) ===== */
+@media (max-width: 600px) {
+  .navbar { flex-direction: column; align-items: flex-start; } /* stack logo and links */
+  .container { padding: 1rem 0.75rem; }
+  .nav-links { gap: 0.6rem; }
+}
