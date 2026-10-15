@@ -1,0 +1,47 @@
+
+@import "tailwindcss";
+
+/* Light Theme */
+:root {
+  --page-bg: #f9fafb;
+  --card-bg: #ffffff;
+  --text-color: #111827;
+  --muted-color: #6b7280;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+}
+
+/* Dark Theme */
+.dark {
+  --page-bg: #111827;
+  --card-bg: #1f2937;
+  --text-color: #f9fafb;
+  --muted-color: #d1d5db;
+  --border-color: #374151;
+  --input-bg: #374151;
+}
+
+/* Global Styling */
+body {
+  margin: 0;
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reusable Theme Classes */
+.theme-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.theme-muted {
+  color: var(--muted-color);
+}
+
+.theme-input {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
