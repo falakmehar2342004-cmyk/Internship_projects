@@ -1,0 +1,89 @@
+/* =====================================================================
+   THEME COLOURS
+   Yahan saare colours CSS variables mein hain. Light theme default hai,
+   dark theme [data-theme='dark'] mein wahi variables badal deta hai.
+   Naya colour scheme: Teal (primary) + Coral (accent).
+   ===================================================================== */
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  /* page aur cards ka background */
+  --bg: #f3f6f5;
+  --bg-subtle: #e5edeb;
+  --surface: #ffffff;
+  --surface-2: #f8faf9;
+
+  /* text */
+  --text: #10211f;
+  --text-muted: #536663;
+
+  /* borders */
+  --border: #d8e2df;
+  --border-strong: #bccbc7;
+
+  /* primary: buttons, links, active states (teal) */
+  --primary: #0f766e;
+  --primary-hover: #0b5f58;
+  --primary-contrast: #ffffff;
+  --primary-soft: #d9f1ee;
+
+  /* accent: coupons, highlights (coral) */
+  --accent: #d9482f;
+  --accent-soft: #fde8e4;
+  --star: #f5a524; /* rating ke stars */
+
+  /* hero (home page ka upar wala hissa) */
+  --hero-bg: #0d3b36;
+  --hero-text: #ecf8f6;
+  --hero-muted: #a9d3cd;
+
+  /* status colours */
+  --success: #15803d;
+  --success-soft: #dcf5e4;
+  --danger: #c62d3f;
+  --danger-soft: #fce4e7;
+
+  /* focus ring aur shadows */
+  --ring: rgba(15, 118, 110, 0.28);
+  --shadow-sm: 0 1px 2px rgba(16, 33, 31, 0.06);
+  --shadow-md: 0 12px 30px rgba(16, 33, 31, 0.12);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0a1311;
+  --bg-subtle: #101c19;
+  --surface: #111d1a;
+  --surface-2: #172623;
+
+  --text: #e6f2ef;
+  --text-muted: #8fa8a2;
+
+  --border: #223632;
+  --border-strong: #2f4a45;
+
+  --primary: #2dd4bf;
+  --primary-hover: #5eead4;
+  --primary-contrast: #04201c;
+  --primary-soft: #12403b;
+
+  --accent: #ff8a73;
+  --accent-soft: #3d1f1a;
+  --star: #fbbf24;
+
+  --hero-bg: #0f2724;
+  --hero-text: #e6f2ef;
+  --hero-muted: #8fa8a2;
+
+  --success: #4ade80;
+  --success-soft: #11321f;
+  --danger: #ff7a85;
+  --danger-soft: #3c1b20;
+
+  --ring: rgba(45, 212, 191, 0.35);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
