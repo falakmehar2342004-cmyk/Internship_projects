@@ -1,0 +1,454 @@
+
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #e5e7eb;
+  background: #0b1020;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  color: #e5e7eb;
+  background: #11182a;
+  border: 1px solid #30394d;
+  border-radius: 10px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px #818cf822;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::placeholder {
+  color: #78839a;
+}
+
+.panel {
+  background: #11182a;
+  border: 1px solid #252e43;
+  border-radius: 16px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  color: white;
+  font-weight: 600;
+  background: #6366f1;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 12px;
+  color: #dbe3f3;
+  background: #1b2438;
+  border: 1px solid #30394d;
+  border-radius: 10px;
+}
+
+.btn-secondary:hover {
+  background: #263149;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #aab4c8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.muted {
+  color: #8995ac;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  color: #cbd5e1;
+  font-size: 11px;
+  font-weight: 700;
+  background: #202a40;
+  border-radius: 999px;
+}
+
+.badge-success {
+  color: #6ee7b7;
+  background: #12372e;
+}
+
+.badge-error {
+  color: #fda4af;
+  background: #3d202c;
+}
+
+.badge-warning {
+  color: #fcd34d;
+  background: #3a2d17;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #1b2438 25%,
+    #263149 50%,
+    #1b2438 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideIn 0.25s ease-out;
+}
+
+
+/* Theme variables */
+:root {
+  color-scheme: dark;
+  --app-bg: #0b1120;
+  --surface-bg: #111a2e;
+  --surface-hover: #1a2740;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #26344d;
+}
+
+:root.light {
+  color-scheme: light;
+  --app-bg: #f5f7fb;
+  --surface-bg: #ffffff;
+  --surface-hover: #edf2f8;
+  --text-primary: #172033;
+  --text-secondary: #64748b;
+  --border-color: #dce3ed;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.panel {
+  background: var(--surface-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.muted {
+  color: var(--text-secondary);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 9px 12px;
+  background: var(--surface-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-hover);
+}
+
+/* Common light-theme surfaces */
+:root.light input,
+:root.light textarea,
+:root.light select {
+  background-color: #ffffff;
+  color: #172033;
+  border-color: #dce3ed;
+}
+
+:root.light input::placeholder,
+:root.light textarea::placeholder {
+  color: #94a3b8;
+}
+
+:root.light .border-slate-700,
+:root.light .border-slate-800 {
+  border-color: var(--border-color);
+}
+
+:root.light .text-white {
+  color: var(--text-primary);
+}
+
+:root.light .text-slate-400,
+:root.light .text-slate-500 {
+  color: var(--text-secondary);
+}
+
+:root.light .bg-slate-950,
+:root.light .bg-slate-900,
+:root.light .bg-slate-800 {
+  background-color: var(--surface-bg);
+}
+
+:root.light .hover\:bg-slate-800:hover,
+:root.light .hover\:bg-slate-700:hover {
+  background-color: var(--surface-hover);
+}
+
+
+/* Full-site light theme overrides */
+:root.light {
+  color-scheme: light;
+  color: var(--text-primary);
+  background: var(--app-bg);
+}
+
+:root.light body {
+  background: var(--app-bg);
+  color: var(--text-primary);
+}
+
+/* Common dark surfaces used across the project */
+:root.light [class*="bg-[#0"],
+:root.light [class*="bg-[#1"],
+:root.light [class*="bg-[#2"] {
+  background-color: var(--surface-bg);
+}
+
+/* Text colors */
+:root.light [class*="text-white"],
+:root.light [class*="text-[#e"],
+:root.light [class*="text-[#f"] {
+  color: var(--text-primary);
+}
+
+/* Borders */
+:root.light [class*="border-[#2"],
+:root.light [class*="border-[#3"] {
+  border-color: var(--border-color);
+}
+
+/* Inputs */
+:root.light input,
+:root.light textarea,
+:root.light select {
+  background: #fff;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Cards and panels */
+:root.light .panel,
+:root.light .theme-toggle {
+  background: var(--surface-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Secondary buttons */
+:root.light .btn-secondary {
+  background: #fff;
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+:root.light .btn-secondary:hover {
+  background: var(--surface-hover);
+}
+
+/* Common hover states */
+:root.light [class*="hover:bg-[#"]:hover {
+  background-color: var(--surface-hover);
+}
+
+/* ========================================
+   LIGHT MODE — CARD DESIGN IMPROVEMENTS
+======================================== */
+
+:root.light {
+  --app-bg: #f3f6fc;
+  --surface-bg: #ffffff;
+  --surface-hover: #f1f5f9;
+  --text-primary: #172033;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+}
+
+/* Dashboard and API cards with dark backgrounds */
+:root.light [class~="bg-[#0d1425]"],
+:root.light [class~="bg-[#0b1020]"],
+:root.light [class~="bg-[#0b1120]"],
+:root.light [class~="bg-[#11182a]"],
+:root.light [class~="bg-[#111a2e]"],
+:root.light [class~="bg-[#1b2438]"],
+:root.light [class~="bg-[#202a40]"],
+:root.light [class~="bg-[#263149]"] {
+  background-color: #ffffff !important;
+  color: #172033;
+}
+
+/* Main panels and cards */
+:root.light .panel {
+  background-color: #ffffff;
+  color: #172033;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgb(15 23 42 / 5%);
+}
+
+/* Other cards using rounded corners */
+:root.light [class~="rounded-xl"][class*="bg-[#0"],
+:root.light [class~="rounded-xl"][class*="bg-[#1"],
+:root.light [class~="rounded-xl"][class*="bg-[#2"] {
+  background-color: #ffffff !important;
+  color: #172033;
+  border-color: #e2e8f0;
+}
+
+/* Card headings and body text */
+:root.light .panel h1,
+:root.light .panel h2,
+:root.light .panel h3,
+:root.light [class~="bg-[#0d1425]"] h1,
+:root.light [class~="bg-[#0d1425]"] h2,
+:root.light [class~="bg-[#0d1425]"] h3 {
+  color: #172033;
+}
+
+:root.light .muted {
+  color: #64748b;
+}
+
+/* Secondary buttons */
+:root.light .btn-secondary {
+  background-color: #ffffff;
+  color: #334155;
+  border-color: #dbe3ee;
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+:root.light .btn-secondary:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Inputs and form controls */
+:root.light input,
+:root.light textarea,
+:root.light select {
+  background-color: #ffffff;
+  color: #172033;
+  border-color: #dbe3ee;
+}
+
+:root.light input:focus,
+:root.light textarea:focus,
+:root.light select:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 12%);
+}
+
+/* Smooth card hover */
+:root.light .panel {
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+:root.light .panel:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 7%);
+}
+
+/* Keep primary action buttons prominent */
+:root.light .btn-primary {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+:root.light .btn-primary:hover {
+  background-color: #4338ca;
+}
